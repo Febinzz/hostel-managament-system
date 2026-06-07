@@ -1,0 +1,194 @@
+/* --- Global Theme Variables (Black/White/Orange) --- */
+:root {
+    --text-light: #ffffff; /* White text */
+    --bg-dark: #121212; /* Deep background */
+    --content-box-bg: rgba(30, 30, 30, 0.95); /* Transparent dark box */
+    --image-overlay: rgba(0, 0, 0, 0.6); /* Slight dark overlay for background image */
+    --btn-primary: #ff9800; /* Vibrant Orange */
+    --btn-secondary: #f07b00; /* Darker Orange for hover */
+    --text-dark-btn: #121212; /* Dark text on buttons */
+    --input-bg: #2d2d2d; /* Input background */
+    --input-border: #444444; /* Input border */
+    --focus-ring: #ffb747; /* Orange focus ring */
+}
+
+/* --- Base Body and Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    min-height: 100vh;
+    width: 100vw;
+    overflow: auto; /* allow scrolling if necessary */
+    padding: 0;
+}
+
+.main-content-area {
+    background-image: url('../c.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+    padding: 20px;
+}
+
+/* Overlay for darkening background */
+.main-content-area::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--image-overlay);
+    z-index: 1;
+}
+
+.container {
+    background-color: var(--content-box-bg);
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* above overlay */
+    animation: fadeIn 0.8s ease-out;
+    /* Centering fix */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Headings --- */
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* --- Form Inputs --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-light);
+    background-color: var(--input-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: var(--btn-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.primary-btn {
+    background: linear-gradient(180deg, #ffb347 0%, var(--btn-primary) 100%);
+    color: var(--text-dark-btn);
+}
+
+.primary-btn:hover {
+    background: linear-gradient(180deg, #ffc77f 0%, #ff9800 100%);
+    box-shadow: 0 6px 15px rgba(255,152,0,0.4);
+}
+
+.secondary-btn {
+    background: var(--btn-secondary);
+    color: var(--text-dark-btn);
+}
+
+.secondary-btn:hover {
+    background-color: var(--btn-primary);
+}
+
+.back-btn {
+    background: #444444;
+    color: var(--text-light);
+}
+
+.back-btn:hover {
+    background-color: #555555;
+}
+
+/* --- Navigation Links Layout --- */
+.admin-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .admin-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

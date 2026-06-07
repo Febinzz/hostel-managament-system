@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Room</title>
+    
+    <!-- Sans-Serif Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome: For Icons in buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Linking to the new, dedicated CSS file -->
+    <link rel="stylesheet" href="css/report.css">
+</head>
+<body>
+    <div class="main-content-area">
+        <div class="container fade-in">
+            <h2><i class="fas fa-plus-circle icon"></i> Add New Room</h2>
+            <form id="addRoomForm">
+                <div class="input-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input type="text" id="roomNumber" placeholder="e.g., 101" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="roomCapacity">Capacity</label>
+                    <input type="number" id="roomCapacity" placeholder="e.g., 2 or 3" required min="1">
+                </div>
+
+                <button type="submit" class="btn primary-btn"><i class="fas fa-bed"></i> Add Room</button>
+            </form>
+
+            <!-- Navigation links -->
+            <div class="admin-links">
+                <a href="Admin_main.html" class="btn secondary-btn"><i class="fas fa-chevron-left"></i> Previous Page</a>
+                <a href="index.html" class="btn back-btn"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
+

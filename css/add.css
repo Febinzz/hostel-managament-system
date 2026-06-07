@@ -1,0 +1,142 @@
+/* Theme colors */
+:root {
+    --text-light: #fff;
+    --bg-dark: #000;
+    --box-bg: rgba(0, 0, 0, 0.7);
+    --btn-primary: #ff9800;       /* Yellow */
+    --btn-secondary: #f57c00;     /* Darker yellow on hover */
+    --input-bg: #fff;              /* White dropdown/input background */
+    --input-text: #000;            /* Black text inside inputs/dropdowns */
+    --input-border: #444;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background and layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background: url('../b.jpg') center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-light);
+}
+
+/* Main container */
+.container {
+    background: var(--box-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+}
+
+/* Heading */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+/* Input & dropdown styles */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* Inputs and dropdowns */
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    background: var(--input-bg);  /* White background */
+    color: var(--input-text);     /* Black text */
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--btn-primary);
+    box-shadow: 0 0 6px var(--btn-primary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+    background: var(--btn-primary);
+    color: #000; /* black text */
+}
+
+.btn:hover {
+    background: var(--btn-secondary);
+}
+
+.primary-btn {
+    background: var(--btn-primary);
+    color: #000;
+}
+
+.primary-btn:hover {
+    background: var(--btn-secondary);
+}
+
+.secondary-btn {
+    background: var(--btn-primary);
+    color: #000;
+}
+
+.secondary-btn:hover {
+    background: var(--btn-secondary);
+}
+
+.back-btn {
+    background: var(--btn-primary);
+    color: #000;
+}
+
+.back-btn:hover {
+    background: var(--btn-secondary);
+}
+
+/* Admin link section */
+.admin-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Make admin links uniform */
+.admin-links .btn {
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 160px;
+    text-align: center;
+}

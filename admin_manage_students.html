@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Students</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome: For Icons in buttons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-manage-page">
+
+    <div class="container ">
+        <h2 class="title">🎓 Manage Students</h2>
+        <p class="subtitle">View, remove, or delete student records</p>
+
+        <div class="table-container">
+            <table id="manageStudentsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll No</th>
+                        <th>Course</th>
+                        <th>Room</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="admin-links">
+            <a href="Admin_main.html" class="btn secondary-btn"><i class="fas fa-chevron-left"></i> Previous Page</a>
+            <a href="index.html" class="btn back-btn"><i class="fas fa-home"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+    
+        const backend = window.location.origin || "http://localhost:5000";
+
+    const studentsTable = document.querySelector("#manageStudentsTable tbody");
+
+    async function loadStudents() {
+        studentsTable.innerHTML = "";
+        try {
+            const students = await fetch(`${backend}/report/students`).then(r => r.json());
+            students.forEach(s => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td data-label="Name"><span class="value">${s.name}</span></td>
+                    <td data-label="Roll No"><span class="value">${s.roll_no}</span></td>
+                    <td data-label="Course"><span class="value">${s.course}</span></td>
+                    <td data-label="Room"><span class="value">${s.room_number || "Not Allocated"}</span></td>
+                    <td data-label="Actions">
+                        <div class="actions-wrap">
+                            ${s.room_number ? `<button class="action-btn removeAllocation" data-id="${s.student_id}">Remove</button>` : ""}
+                            <button class="action-btn deleteStudent" data-id="${s.student_id}">Delete</button>
+                        </div>
+                    </td>
+                `;
+                studentsTable.appendChild(tr);
+            });
+
+            // remove allocation
+            document.querySelectorAll(".removeAllocation").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const studentId = btn.dataset.id;
+                    if (!confirm("Remove this student from room?")) return;
+                    try {
+                        const res = await fetch(`${backend}/allocation/${studentId}`, { method: "DELETE" });
+                        const data = await res.json();
+                        alert(res.ok ? data.message : data.error);
+                        loadStudents();
+                    } catch (err) {
+                        console.error(err);
+                        alert("Error removing allocation");
+                    }
+                });
+            });
+
+            // delete student
+            document.querySelectorAll(".deleteStudent").forEach(btn => {
+                btn.addEventListener("click", async () => {
+                    const studentId = btn.dataset.id;
+                    if (!confirm("Delete this student completely?")) return;
+                    try {
+                        await fetch(`${backend}/allocation/${studentId}`, { method: "DELETE" }).catch(() => {});
+                        const res = await fetch(`${backend}/students/${studentId}`, { method: "DELETE" });
+                        const data = await res.json();
+                        alert(res.ok ? "Student deleted successfully" : data.error);
+                        loadStudents();
+                    } catch (err) {
+                        console.error(err);
+                        alert("Error deleting student");
+                    }
+                });
+            });
+
+        } catch (err) {
+            console.error(err);
+            studentsTable.innerHTML = "<tr><td colspan='5'>Error loading students</td></tr>";
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        loadStudents();
+    });
+    </script>
+</body>
+</html>
+
+

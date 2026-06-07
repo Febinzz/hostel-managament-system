@@ -1,0 +1,225 @@
+/* --- Global Theme Variables (Black/White/Orange) --- */
+:root {
+    --text-light: #ffffff; /* White text */
+    --bg-dark: #121212; /* Deep background */
+    --content-box-bg: rgba(0, 0, 0, 0.5); /* Dark gray for the form box */
+    --image-overlay: rgba(0, 0, 0, 0.75); /* Dark overlay for background image */
+    --btn-primary: #ff9800; /* Orange primary buttons */
+    --btn-secondary: #f07b00; /* Orange secondary buttons */
+    --text-dark-btn: #121212; /* Dark text on buttons */
+    --input-border: #444444; /* Dark border color for inputs */
+}
+
+/* --- Base Body and Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../b.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Overlay to darken background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--image-overlay);
+    z-index: 1;
+}
+
+/* --- Container (Form Box) --- */
+.main-content-area {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--content-box-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Headings --- */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon {
+    color: var(--btn-primary);
+}
+
+/* --- Form Inputs --- */
+#addRoomForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+input[type="text"], input[type="number"], input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    background-color: #2c2c2c;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: var(--btn-primary);
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.5);
+}
+
+::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+/* Ensure login form inputs match the visual weight and sizing of buttons */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    padding: 12px 25px; /* match .btn horizontal padding */
+    border-radius: 6px;
+    border: none;
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    font-weight: 700;
+    color: var(--text-light);
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255,152,0,0.3);
+    border: none;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    white-space: nowrap;
+    width: 100%;
+}
+
+/* Primary button (Add Room) */
+.primary-btn {
+    background-color: var(--btn-primary);
+    color: var(--text-dark-btn);
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background-color: var(--btn-secondary);
+}
+
+/* Secondary buttons (Navigation) */
+.secondary-btn {
+    background-color: var(--btn-secondary);
+    color: var(--text-dark-btn);
+    margin-top: 10px;
+}
+
+.secondary-btn:hover {
+    background-color: var(--btn-primary);
+}
+
+/* Back button */
+.back-btn {
+    background-color: #444444;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+.back-btn:hover {
+    background-color: #555555;
+}
+
+/* --- Navigation links layout --- */
+.admin-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+}

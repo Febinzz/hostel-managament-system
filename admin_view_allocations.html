@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - View Allocations</title>
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+    <div class="main-content-area">
+        <div class="container fade-in">
+            <h2><i class="fas fa-eye icon"></i> View Allocations</h2>
+            <div class="table-wrapper">
+                <div class="mobile-headers" aria-hidden="true">
+                    <div class="mob-col">Student</div>
+                    <div class="mob-col">Room</div>
+                    <div class="mob-col">Action</div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Room</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allocationsList">
+                        <!-- Filled by js/script.js -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="admin-links">
+                <a href="Admin_main.html" class="btn secondary-btn"><i class="fas fa-chevron-left"></i> Previous Page</a>
+                <a href="index.html" class="btn back-btn"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

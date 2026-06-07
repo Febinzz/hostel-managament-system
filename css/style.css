@@ -1,0 +1,875 @@
+/* Full-page gradient background */
+body, html {
+    height: 80%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+/* Container card */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Page title */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: #fff;
+    background: #007bff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* For admin and student pages */
+body.admin-page,
+body.student-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f9;
+}
+
+body.admin-page .container,
+body.student-page .container {
+    max-width: 400px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: #fff;
+    text-align: center;
+}
+/* Make body full height and center content */
+body {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: center;     /* vertical center */
+    background-color: #f5f5f5; /* optional, for better look */
+    font-family: Arial, sans-serif;
+    overflow: auto;
+}
+
+/* Container styling */
+.container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    text-align: center;
+    width: min(100%, 420px);
+}
+
+/* Form input styling */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* === Login Form === */
+/* === Login Page Button Style === */
+.login-btn {
+    background-color: #ff9900;       /* Bright orange */
+    color: #ffffff;                  /* White text */
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* subtle depth */
+}
+
+.login-btn:hover {
+    background-color: #e68a00;       /* Slightly darker orange */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2b2b2b;       /* Dark input background */
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.login-form input:focus {
+    outline: 2px solid #ff9900;      /* Orange border on focus */
+}
+
+
+/* Button styling */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.secondary-btn {
+    background-color: #ff9800;
+    color: #121212;
+    text-decoration: none;
+}
+
+.secondary-btn:hover {
+    background-color: #e68900;
+}
+
+.back-btn {
+    margin-top: 15px;
+    display: inline-flex;
+    background-color: #666;
+    color: white;
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+/* Ensure html and body take full width and height */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Full-page gradient background */
+.hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full viewport height */
+    width: 100vw;  /* full viewport width */
+    color: #fff;
+    text-align: center;
+}
+
+/* Container card stays centered */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+/* Style dropdowns same as inputs */
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    /* Ensure page uses full width and no unexpected padding */
+    html, body, body.admin-manage-page {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .admin-manage-page .container {
+        max-width: 100%;
+        width: calc(100% - 24px);
+        padding: 12px;
+        margin: 8px auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    }
+
+    /* Table wrapper should allow internal scroll but not create page overflow */
+    .table-container {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+    }
+
+    /* Stacked card list */
+    #manageStudentsTable {
+        min-width: 0;
+        width: 100%;
+        display: block;
+        table-layout: auto;
+        border-spacing: 0;
+    }
+
+    #manageStudentsTable thead,
+    #manageStudentsTable tbody,
+    #manageStudentsTable tr,
+    #manageStudentsTable th,
+    #manageStudentsTable td {
+        display: block;
+        width: 100%;
+    }
+
+    #manageStudentsTable tr {
+        margin-bottom: 12px;
+        border-radius: 12px;
+        padding: 10px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+        border: none;
+        overflow: visible;
+    }
+
+    /* Label / value layout using flex — allow value to wrap */
+    /* Stack label above value on mobile; make label a yellow pill */
+    #manageStudentsTable td {
+        display: block;
+        padding: 10px 14px;
+        font-size: 1rem;
+        line-height: 1.35;
+        color: #f7f7f7;
+        background: transparent;
+        margin: 0 0 8px 0;
+        word-break: break-word;
+    }
+
+    #manageStudentsTable td::before {
+        content: attr(data-label) ": ";
+        display: inline;
+        background: transparent;
+        color: #ffb347;
+        padding: 0;
+        border-radius: 0;
+        font-weight: 800;
+        margin-bottom: 0;
+        box-shadow: none;
+    }
+
+    /* Value appears below the label and takes full width */
+    #manageStudentsTable td .value {
+        display: inline;
+        margin-top: 0;
+        font-weight: 700;
+        color: #ffffff;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    /* Hide the table head and any extra mobile headers to avoid duplicate headings */
+    #manageStudentsTable thead { display: none; }
+    .mobile-headers { display: none; }
+
+    /* Actions: stack and full width for easy tapping */
+    td[data-label="Actions"] {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    td[data-label="Actions"] .actions-wrap {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    td[data-label="Actions"] .action-btn {
+        width: 100%;
+        padding: 12px 14px;
+        font-size: 1rem;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #ffb347, #ff9800);
+        color: #121212;
+    }
+
+    /* Nav buttons full width */
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 12px;
+        padding: 0 6px 12px;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+body.admin-page .back-btn:hover {
+    color: #fff;
+}
+/* ===========================
+   Admin Manage Students Page
+=========================== */
+
+body.admin-manage-page {
+    margin: 0;
+    padding: 40px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: url('../b.jpg') no-repeat center center/cover; /* your bg image */
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.admin-manage-page .container {
+    background: rgba(0, 0, 0, 0.8); /* dark glassy box like login */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    max-width: 1000px;
+    width: 95%;
+    color: white;
+    text-align: center;
+}
+
+.admin-manage-page .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Fallback: ensure admin login page always shows a visible background */
+body.admin-page {
+    background: linear-gradient(135deg, #6a11cb, #2575fc) !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+}
+
+body.admin-page .container {
+    background: rgba(255,255,255,0.95) !important;
+    color: #222 !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+}
+
+/* Ensure login button and inputs are visible */
+.login-form input {
+    background-color: #2b2b2b !important;
+    color: #fff !important;
+}
+
+.login-btn {
+    background-color: #ff9900 !important;
+    color: #fff !important;
+}
+
+.admin-manage-page .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+/* Mobile header row for manage students (hidden on desktop) */
+.mobile-headers {
+    display: none;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.mobile-headers .mob-col {
+    display: inline-block;
+    width: 20%;
+    font-weight: 800;
+    color: #ffb347;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#manageStudentsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#manageStudentsTable th,
+#manageStudentsTable td {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    color: #eee;
+}
+
+#manageStudentsTable th {
+    background: rgba(255, 152, 0, 0.9);
+    color: white;
+    font-weight: bold;
+}
+
+#manageStudentsTable tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+.action-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #e68900;
+}
+
+.btn-group {
+    margin-top: 20px;
+}
+
+    .btn-group .btn {
+        margin: 0 10px;
+        background: #ff9800;
+        color: white;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .btn-group .btn:hover {
+        background: #e68900;
+    }
+
+.admin-manage-page .container {
+    min-height: 400px; /* ensures container has enough height even before table loads */
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: min(100%, 96%);
+        padding: 24px;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-manage-page .container {
+        max-width: 100%;
+        padding: 16px 14px;
+        margin: 12px;
+    }
+
+    .table-container {
+        overflow: visible;
+    }
+
+    /* Make the table a clean stacked card list on small screens */
+    #manageStudentsTable {
+        min-width: 0;
+        width: 100%;
+        display: block;
+        table-layout: auto;
+    }
+
+    #manageStudentsTable thead,
+    #manageStudentsTable tbody,
+    #manageStudentsTable tr,
+    #manageStudentsTable th,
+    #manageStudentsTable td {
+        display: block;
+        width: 100%;
+    }
+
+    #manageStudentsTable thead {
+        display: none !important;
+    }
+
+    #manageStudentsTable tr {
+        margin-bottom: 14px;
+        border-radius: 12px;
+        padding: 12px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+        border: none;
+    }
+
+    /* Compact field layout: label is left, value right using flex */
+    #manageStudentsTable td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        color: #f3f3f3;
+        background: transparent;
+        margin: 0 0 8px 0;
+    }
+
+    #manageStudentsTable td::before {
+        content: attr(data-label) ": ";
+        position: static;
+        display: inline;
+        margin-right: 8px;
+        text-align: left;
+        font-weight: 700;
+        color: #ffb347;
+        overflow: visible;
+        text-overflow: initial;
+        white-space: normal;
+    }
+
+    /* Ensure the actual value text (wrapped in .value) grows and truncates if necessary */
+    #manageStudentsTable td .value {
+        display: inline;
+        flex: none;
+        text-align: left;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+    }
+
+    /* Action buttons stack and become full-width */
+    .action-btn {
+        display: inline-block;
+        width: auto;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        margin: 6px 6px 6px 0;
+        border-radius: 8px;
+    }
+
+    td[data-label="Actions"] {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    td[data-label="Actions"] .actions-wrap {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    td[data-label="Actions"] .action-btn {
+        width: 100%;
+    }
+
+    /* Make navigation buttons full width and visible */
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .btn-group .btn {
+        width: 100%;
+        margin: 0;
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+    .mobile-headers { display: flex; justify-content: space-between; gap: 8px; }
+}
+
+.table-container {
+    min-height: 200px; /* keeps table space reserved */
+}
+#manageStudentsTable {
+    table-layout: fixed;
+}
+
+/* Ensure desktop keeps a minimum table width while mobile can stack freely */
+@media (min-width: 769px) {
+    #manageStudentsTable { min-width: 600px; }
+}
+/* --- Global Styles and Font Setup --- */
+:root {
+    --text-light: #ffffff;
+    --bg-dark-overlay: rgba(0, 0, 0, 0.7);
+    --btn-primary: #ff9800;
+    --btn-secondary: #f07b00;
+    --text-dark-btn: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.landing-page {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: var(--text-light);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* --- Container and Background --- */
+.main-container {
+    background-image: url('../b.jpg'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--bg-dark-overlay);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* All text white */
+    text-align: center; /* ensures heading is centered */
+}
+/* --- Typography Styles --- */
+.icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--btn-primary);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 15px 0; /* adjust vertical spacing */
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #ffffff; /* white text */
+    text-align: center; /* center the title */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    opacity: 0.85;
+    color: #ffffff; /* Ensure white text */
+}
+
+/* --- Button Styles --- */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.4);
+    color: var(--text-dark-btn);
+}
+
+.btn-admin {
+    background: linear-gradient(180deg, #ffb347 0%, var(--btn-primary) 100%);
+}
+
+.btn-student {
+    background: linear-gradient(180deg, var(--btn-primary) 0%, var(--btn-secondary) 100%);
+}
+
+.btn:hover {
+    background-color: #ffb74d;
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.5), 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+/* === Fade overlay for admin manage page === */
+.admin-manage-page {
+    position: relative;
+    min-height: 100vh;
+    background: url("../images/admin-bg.jpg") center/cover no-repeat; /* your background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* overlay fade */
+.admin-manage-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* darker = increase 0.6 */
+    z-index: 1;
+}
+
+/* make sure content is above fade */
+.admin-manage-page .container {
+    position: relative;
+    z-index: 2;
+}
+
+  Admin Login Page Styling
+   ========================= */
+   body.admin-page {
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    background: url('../b.jpg') no-repeat center center/cover;
+}
+
+body.admin-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fade */
+    z-index: 0; /* Behind container */
+}
+
+/* Container stays above */
+.container {
+    position: relative;
+    z-index: 1;  /* Must be higher than the overlay */
+    background: rgba(0,0,0,0.85); /* Optional: give the box slight black */
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+
+
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Allocate Room</title>
+    
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/allocate.css">
+</head>
+<body>
+    <div class="main-content-area">
+        <div class="container fade-in">
+            <h2><i class="fas fa-calendar-check icon"></i> Allocate Room</h2>
+
+            <!-- Allocation Form -->
+            <form id="allocateForm">
+                <div class="input-group">
+                    <label for="allocateStudent">Select Student</label>
+                    <select id="allocateStudent" required>
+                        <option value="">Select Student</option>
+                        <option value="1">John Doe</option>
+                        <option value="2">Alice Johnson</option>
+                        <option value="3">Rahul Kumar</option>
+                        <option value="4">Sophia Singh</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="allocateRoom">Select Room</label>
+                    <select id="allocateRoom" required>
+                        <option value="">Select Room</option>
+                        <option value="101">Room 101</option>
+                        <option value="102">Room 102</option>
+                        <option value="103">Room 103</option>
+                        <option value="104">Room 104</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn primary-btn"><i class="fas fa-bed"></i> Allocate</button>
+            </form>
+
+            <!-- Navigation links -->
+            <div class="admin-links">
+                 <a href="Admin_main.html" class="btn secondary-btn"><i class="fas fa-chevron-left"></i> Previous Page</a>
+                <a href="index.html" class="btn back-btn"><i class="fas fa-home"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+

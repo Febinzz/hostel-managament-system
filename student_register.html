@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student - Register</title>
+    <link rel="stylesheet" href="css/reg.css">
+</head>
+<body class="student-page">
+
+    <div class="main-content-area">
+        <div class="container fade-in">
+            <h2>Student Registration</h2>
+            
+            <form id="registerForm">
+                <input type="text" id="studentName" placeholder="Name" required>
+                <input type="text" id="studentRoll" placeholder="Roll Number" required>
+                <input type="text" id="studentCourse" placeholder="Department" required>
+                <input type="email" id="studentEmail" placeholder="Email (must end with @mgits.ac.in)" required>
+                <button type="submit" class="btn primary-btn">Register</button>
+            </form>
+
+            <div class="admin-links">
+                <a href="student_view_allocation.html" class="btn secondary-btn">View Allocation</a>
+                <a href="index.html" class="btn back-btn">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

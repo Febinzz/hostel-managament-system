@@ -1,0 +1,224 @@
+/* --- Global Theme Variables (Black/White/Orange) --- */
+:root {
+    --text-light: #ffffff; /* White text */
+    --bg-dark: #121212; /* Dark background */
+    --content-box-bg: rgba(30, 30, 30, 0.95); /* Dark box with slight transparency */
+    --image-overlay: rgba(0, 0, 0, 0.7); /* Overlay on background image */
+    --btn-primary: #ff9800; /* Primary buttons (orange) */
+    --btn-secondary: #f07b00; /* Hover/darker orange */
+    --text-dark-btn: #121212; /* Dark text on buttons */
+    --input-bg: #ffffff; /* White background for dropdowns */
+    --input-text: #000000; /* Black text for dropdowns */
+    --input-border: #444444; /* Border for other inputs */
+    --focus-ring: #ffb747; /* Orange focus ring */
+}
+
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Body & Background --- */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main-content-area {
+    background-image: url('../b.jpg'); /* Update to your image */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content-area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--image-overlay);
+    z-index: 1;
+}
+
+/* --- Container --- */
+.container {
+    background-color: var(--content-box-bg);
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon {
+    color: var(--btn-primary);
+}
+
+/* --- Form Inputs & Dropdowns --- */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--text-light);
+    background-color: #2d2d2d;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: var(--btn-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3);
+}
+
+/* Dropdown styling */
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    background-color: var(--input-bg); /* White background */
+    color: var(--input-text); /* Black text */
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+    border-color: var(--btn-primary);
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Primary button */
+.primary-btn {
+    background: var(--btn-primary);
+    color: var(--text-dark-btn);
+    margin-top: 10px;
+}
+
+.primary-btn:hover {
+    background: var(--btn-secondary);
+}
+
+/* Secondary buttons (navigation) */
+.secondary-btn {
+    background: var(--btn-secondary);
+    color: var(--text-dark-btn);
+}
+
+.secondary-btn:hover {
+    background: var(--btn-primary);
+}
+
+/* Back to Home */
+.back-btn {
+    background: #444;
+    color: var(--text-light);
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+
+.admin-links .btn {
+    text-decoration: none;
+}
+
+/* --- Admin Links Layout --- */
+.admin-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--input-border);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .admin-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,194 @@
+/* --- Global Theme Variables --- */
+:root {
+    --text-light: #ffffff;
+    --btn-primary: #ff9800;
+    --btn-secondary: #f07b00;
+    --text-dark-btn: #121212;
+    --table-bg: rgba(0,0,0,0.85); /* Dark box for table */
+    --table-header-bg: #333333;
+    --table-row-hover: #444444;
+}
+
+/* --- Base Layout --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    width: 100vw;
+    background-image: url('../b.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Heading --- */
+h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-light);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* --- Table Container --- */
+.table-wrapper {
+    background-color: var(--table-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    overflow-x: auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Mobile header row (hidden on desktop) */
+.mobile-headers {
+    display: none;
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+.mobile-headers .mob-col {
+    display: inline-block;
+    width: 33%;
+    font-weight: 800;
+    color: var(--btn-primary);
+    text-align: center;
+}
+
+/* --- Table --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-light);
+}
+
+thead tr {
+    background-color: var(--table-header-bg);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+tbody tr:hover {
+    background-color: var(--table-row-hover);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.secondary-btn {
+    background: var(--btn-secondary);
+    color: var(--text-dark-btn);
+}
+
+.secondary-btn:hover {
+    background-color: var(--btn-primary);
+}
+
+.back-btn {
+    background: #444444;
+    color: var(--text-light);
+}
+
+.back-btn:hover {
+    background-color: #555555;
+}
+
+/* --- Admin Links --- */
+.admin-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.admin-links .btn {
+    text-decoration: none;
+}
+
+/* --- Responsive Table --- */
+@media (max-width: 768px) {
+    .mobile-headers { display: flex; justify-content: space-between; gap: 8px; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute; top: -9999px; left: -9999px; }
+    tr {
+        border: 1px solid rgba(255,255,255,0.2);
+        margin-bottom: 15px;
+        border-radius: 8px;
+        background-color: var(--table-bg);
+        padding: 10px;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        font-weight: 700;
+        color: var(--btn-primary);
+    }
+    .btn { width: 100%; margin-bottom: 10px; }
+    .admin-links { flex-direction: column; }
+}
+
+.main-content-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 0.5 = 50% fade, adjust darker/lighter */
+    z-index: 1;
+}
+
+/* make sure container stays above overlay */
+.container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Mobile heading size adjustment to remain visible */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+    }
+}
+
