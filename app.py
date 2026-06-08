@@ -108,7 +108,11 @@ def send_student_id_email(to_email, student):
     if MAIL_CONFIG["use_ssl"]:
         smtp = smtplib.SMTP_SSL(MAIL_CONFIG["host"], MAIL_CONFIG["port"] or 465)
     else:
-        smtp = smtplib.SMTP(MAIL_CONFIG["host"], MAIL_CONFIG["port"] or 587)
+        smtp = smtplib.SMTP(
+            MAIL_CONFIG["host"],
+            MAIL_CONFIG["port"] or 587,
+            timeout=10
+)
 
     try:
         smtp.ehlo()
