@@ -203,6 +203,7 @@ def add_student():
 def forgot_student_id():
     payload = request.get_json(force=True)
     email = (payload.get("email") or "").strip().lower()
+
     if not email:
         return jsonify({"error": "Email is required"}), 400
 
@@ -210,13 +211,13 @@ def forgot_student_id():
     if not students:
         return jsonify({"error": "No student found with that email"}), 404
 
-    try:
-        send_student_id_email(email, students[0])
-        return jsonify({"message": "Student ID sent to email"})
-    except Exception as exc:
-        app.logger.error("Email send failed: %s", exc)
-        return jsonify({"error": "Failed to send email. Check server email configuration.", "details": str(exc)}), 500
+    threading.Thread(
+        target=send_student_id_email,
+        args=(email, students[0]),
+        daemon=True
+    ).start()
 
+    return jsonify({"message": "Email is being sent"})
 
 @app.route("/allocation/<int:student_id>", methods=["GET"])
 def get_allocation(student_id):
