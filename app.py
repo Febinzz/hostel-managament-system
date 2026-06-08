@@ -89,6 +89,11 @@ def query_db(conn, query, params=(), single=False):
 
 
 def send_student_id_email(to_email, student):
+    print("HOST =", MAIL_CONFIG["host"])
+    print("PORT =", MAIL_CONFIG["port"])
+    print("TLS =", MAIL_CONFIG["use_tls"])
+    print("SSL =", MAIL_CONFIG["use_ssl"])
+    print("USER =", MAIL_CONFIG["username"])
     if not MAIL_CONFIG["host"] or not MAIL_CONFIG["username"] or not MAIL_CONFIG["password"]:
         raise RuntimeError("SMTP is not configured. Set MAIL_HOST, MAIL_PORT, MAIL_USERNAME, and MAIL_PASSWORD.")
 
